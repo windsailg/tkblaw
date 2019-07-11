@@ -126,6 +126,16 @@ html {
   color: #43BEAD;
 }
 
+#examList .zone .container > .title > .highlight br {
+  display: none;
+}
+
+@media all and (max-width: 580px) {
+  #examList .zone .container > .title > .highlight br {
+    display: block;
+  }
+}
+
 #examList .zone .container > .title::before {
   content: '';
   position: absolute;
@@ -295,17 +305,22 @@ html {
   margin: 10px auto;
   background: #fff;
   color: #777;
-  -webkit-transition: 0.3s all ease-in-out;
-  -o-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  cursor: pointer;
   text-align: center;
   font-weight: bold;
   font-size: 19px;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -webkit-filter: drop-shadow(7px 7px 5px rgba(26, 26, 26, 0.11));
+  filter: drop-shadow(7px 7px 5px rgba(26, 26, 26, 0.11));
 }
 
 #examList .exam_combo_links .ec_container .ec_block:hover {
-  opacity: .8;
+  -webkit-transform: translate(5px, 5px);
+      -ms-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+  -webkit-filter: drop-shadow(5px 5px 4px rgba(26, 26, 26, 0.3));
+  filter: drop-shadow(5px 5px 4px rgba(26, 26, 26, 0.3));
 }
 
 #examList .info {
@@ -669,6 +684,8 @@ html {
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
+  -webkit-filter: drop-shadow(7px 7px 5px rgba(26, 26, 26, 0.11));
+  filter: drop-shadow(7px 7px 5px rgba(26, 26, 26, 0.11));
   width: 100%;
   border-radius: 6px;
   padding: 8px 10px 6px;
@@ -693,6 +710,8 @@ html {
   -webkit-transform: translate(5px, 5px);
       -ms-transform: translate(5px, 5px);
           transform: translate(5px, 5px);
+  -webkit-filter: drop-shadow(5px 5px 4px rgba(26, 26, 26, 0.3));
+  filter: drop-shadow(5px 5px 4px rgba(26, 26, 26, 0.3));
 }
 
 #examList .info .info_block .recommend_box .action_block a > .content {
@@ -2154,6 +2173,17 @@ html {
   -webkit-transition-delay: 0.5s;
        -o-transition-delay: 0.5s;
           transition-delay: 0.5s;
+  width: 100%;
+}
+
+@media all and (max-width: 581px) {
+  #examList .experience .imagine_exp .experience_box .content_block .exp_content.swiper-slide-active .name > span {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 100%;
+  }
 }
 
 #examList .experience .imagine_exp .experience_box .content_block .exp_content.swiper-slide-active .article {
@@ -2327,6 +2357,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
+  display: none;
   position: absolute;
   bottom: 40px;
   left: -80px;
@@ -2699,8 +2730,9 @@ html {
 #examList .video_intro > .video_box > .intro_block .intro .title {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
+  display: inline-block;
   float: left;
+  width: 100%;
   color: #eee;
   letter-spacing: 2px;
   font-size: 20px;
@@ -2775,7 +2807,7 @@ html {
 @media all and (max-width: 1301px) and (max-width: 581px) {
   #examList .video_intro > .video_box > .video_block {
     width: 100%;
-    height: 50vw;
+    height: 46vw;
   }
 }
 
@@ -3092,6 +3124,7 @@ html {
 @media all and (max-width: 1301px) {
   .table_block {
     width: 100%;
+    padding-left: 1px;
   }
 }
 
@@ -3118,6 +3151,10 @@ html {
   background-color: #DDDDDD;
 }
 
+.table_block table tr th:first-child {
+  outline: 1px solid #ddd;
+}
+
 .table_block table tr td {
   padding: 13px;
   text-align: center;
@@ -3127,6 +3164,7 @@ html {
 
 .table_block table tr td:first-child {
   background: #fff;
+  outline: 1px solid #ddd;
 }
 
 .table_block table tr td ul {

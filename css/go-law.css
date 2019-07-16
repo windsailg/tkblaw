@@ -232,7 +232,7 @@ html {
 
 #examList .bank_title .top_title {
   font-size: 48px;
-  color: #444;
+  color: #666;
   margin: 46px 0 5px;
 }
 
@@ -247,7 +247,7 @@ html {
   display: block;
   font-weight: 300;
   font-size: 17px;
-  color: #444;
+  color: #666;
   margin: 5px 0;
 }
 
@@ -256,7 +256,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 10px 0;
-  color: #444;
+  color: #666;
   font-size: 21px;
 }
 
@@ -814,7 +814,7 @@ html {
 
 @media all and (max-width: 1301px) {
   #examList .teacher .teacher_blocks {
-    padding: 20px 0 25px;
+    padding: 10px 0 10px;
   }
 }
 
@@ -1597,6 +1597,149 @@ html {
 #examList .course_intro .course_information .course_title {
   font-weight: bold;
   width: 100%;
+}
+
+#examList .course_intro .course_information .course_swiper_block .swiper_bg {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding: 45px 120px  30px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media all and (max-width: 861px) {
+  #examList .course_intro .course_information .course_swiper_block .swiper_bg {
+    padding: 35px 25px  20px;
+    margin: 0;
+  }
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  float: unset;
+  width: 100%;
+  padding: 10px 20px  15px;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  -webkit-transition: .3s all ease-in-out;
+  -o-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.2);
+          box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.2);
+  -webkit-transition-duration: .3s;
+       -o-transition-duration: .3s;
+          transition-duration: .3s;
+  width: 200px;
+  margin: 0 22px;
+  padding: 0;
+  z-index: 0;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide:hover {
+  -webkit-transform: translate(5px, 5px);
+      -ms-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .course_image {
+  width: 100%;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .course_image img {
+  width: 100%;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding: 12px 14px 0px;
+  float: left;
+  font-size: 20px;
+  letter-spacing: 0;
+  font-weight: bold;
+  color: #666;
+  height: 60px;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: .3s all ease-in-out;
+  -o-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  float: left;
+  margin: 10px 0 10px;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 22px;
+  overflow: hidden;
+  max-height: 65px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: .3s all ease-in-out;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block .price {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  color: #f66;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block .see_more {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 0 10px;
+  text-align: right;
+  color: #3E4454;
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-button-prev {
+  background-image: url("../img/course_prev.svg");
+  left: 20px;
+  right: auto;
+}
+
+@media all and (max-width: 861px) {
+  #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-button-prev {
+    left: 0px;
+  }
+}
+
+#examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-button-next {
+  background-image: url("../img/course_next.svg");
+  right: 20px;
+  left: auto;
+}
+
+@media all and (max-width: 861px) {
+  #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-button-next {
+    right: 0px;
+  }
 }
 
 #examList .course_intro .course_information .button {

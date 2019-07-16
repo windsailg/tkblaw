@@ -89,42 +89,6 @@ AOS.init({
 });
 
 	
-	$('#course_1').show();
-	$('.tab_item').click(function(){
-		var tabEl = this;
-		tabBoxAction.TabSwitcher(tabEl);
-	});
-
-	$('#Course_next').click(function(){
-		tabBoxAction.CourseNext();
-	});
-
-	var tabBoxAction = {
-
-		TabSwitcher: function (tabEl){
-			$('.tab_box li').removeClass('active');
-			$(tabEl).addClass('active');
-			var triggerId ='#' +  $(tabEl).attr('data-cid');
-			$('.course_information').hide(300);
-			$(triggerId).show(400);
-		},
-
-		CourseNext: function (){
-			var tabActiveThis = $('.tab_item.active');
-			var tabActiveNext = $('.tab_item.active').next();
-			tabActiveNext.addClass('active');
-			
-			if(tabActiveNext.length == 0){
-				$('.tab_box li:first').addClass('active');
-			}
-			tabActiveThis.removeClass('active');
-			var tabActiveThisNew = $('.tab_item.active');
-			var triggerId ='#' +  $(tabActiveThisNew).attr('data-cid');
-			$('.course_information').hide(300);
-			$(triggerId).show(400);
-		},
-
-	}
 
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -178,12 +142,14 @@ AOS.init({
 	// 	freeModeMinimumVelocity : 1,
 	// });
 
+
+
+
 	var student_experience_slider = new Swiper('.student-experience-slider', {
 		allowTouchMove: false,
 		effect : 'fade',
 		loop:true,
 	});
-
 
 	var student_avatar_slider = new Swiper('.student-avatar-slider', {
       allowTouchMove: true,
@@ -222,7 +188,6 @@ AOS.init({
 		 }, 
 	});
 	
-	  
 	var bank_video_swiper = new Swiper('.bank-video-swiper', {
 		allowTouchMove: true,
 		slidesPerView: 1,
@@ -252,9 +217,130 @@ AOS.init({
 		pagination: {
 			el: '.swiper-pagination',
 		},
-	  });
+	});
 
 
+
+
+	$('#course_1').show();
+	$('.tab_item').click(function(){
+		var tabEl = this;
+		tabBoxAction.TabSwitcher(tabEl);
+		setTimeout(() => {
+			swiperInit();
+		}, 500);
+		
+	});
+
+	$('#Course_next').click(function(){
+		tabBoxAction.CourseNext();
+		setTimeout(() => {
+			swiperInit();
+		}, 500);
+	});
+
+	var tabBoxAction = {
+
+		TabSwitcher: function (tabEl){
+			$('.tab_box li').removeClass('active');
+			$(tabEl).addClass('active');
+			var triggerId ='#' +  $(tabEl).attr('data-cid');
+			$('.course_information').hide(300);
+			$(triggerId).show(400);
+		},
+
+		CourseNext: function (){
+			var tabActiveThis = $('.tab_item.active');
+			var tabActiveNext = $('.tab_item.active').next();
+			tabActiveNext.addClass('active');
+			
+			if(tabActiveNext.length == 0){
+				$('.tab_box li:first').addClass('active');
+			}
+			tabActiveThis.removeClass('active');
+			var tabActiveThisNew = $('.tab_item.active');
+			var triggerId ='#' +  $(tabActiveThisNew).attr('data-cid');
+			$('.course_information').hide(300);
+			$(triggerId).show(400);
+		},
+
+	}
+
+swiperInit();
+
+	function swiperInit(){
+		var courseswiper_1 = new Swiper('.course_swiper_1', {
+				allowTouchMove: false,
+				initialSlide :1,
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.swiper-button-next.cs1',
+					prevEl: '.swiper-button-prev.cs1',
+				},
+				breakpoints: { 
+					861: {
+						initialSlide :0,
+					},
+				}
+		});
+
+		var courseswiper_2 = new Swiper('.course_swiper_2', {
+				allowTouchMove: false,
+				initialSlide :1,
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.swiper-button-next.cs2',
+					prevEl: '.swiper-button-prev.cs2',
+				},
+				breakpoints: { 
+					861: {
+						initialSlide :0,
+					},
+				}
+		});
+		
+		var courseswiper_3 = new Swiper('.course_swiper_3', {
+				allowTouchMove: false,
+				initialSlide :1,
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.swiper-button-next.cs3',
+					prevEl: '.swiper-button-prev.cs3',
+				},
+				breakpoints: { 
+					861: {
+						initialSlide :0,
+					},
+				}
+		});
+
+		var courseswiper_4 = new Swiper('.course_swiper_4', {
+				freeMode : false,
+				freeModeMomentum : true,
+				allowTouchMove: false,
+				initialSlide :1,
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				centeredSlides: true,
+				navigation: {
+					nextEl: '.swiper-button-next.cs4',
+					prevEl: '.swiper-button-prev.cs4',
+				},
+				breakpoints: { 
+					861: {
+						initialSlide :0,
+					},
+				}
+		});
+	};
+
+	
 
    //cbox 自適應   
 	var cboxOptions = {

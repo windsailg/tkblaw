@@ -88,32 +88,48 @@ AOS.init({
 
 });
 
-	
 
-
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$('#Chen').addClass('active');
-		$('#Lin').addClass('active');
-	}else{
-
-		$('#Chen').click(function(){
-			if($(this).hasClass('active')){
-				return;
-			}
-			$(this).toggleClass('active');
-			$('#Lin').toggleClass('active');
-		});
-	
-		$('#Lin').click(function(){
-			if($(this).hasClass('active')){
-				return;
-			}
-			$(this).toggleClass('active');
-			$('#Chen').toggleClass('active');
-		});
+$('#Chen').click(function(){
+	if($(this).hasClass('active')){
+		return;
 	}
+	$(this).toggleClass('active');
+	$('#Lin').toggleClass('active');
+});
 
+$('#Lin').click(function(){
+	if($(this).hasClass('active')){
+		return;
+	}
+	$(this).toggleClass('active');
+	$('#Chen').toggleClass('active');
+});
+var resizeTimer = null;
+   $(window).resize(function(){
+         if (resizeTimer) {
+           clearTimeout(resizeTimer)
+			}
+			
+		resizeTimer = setTimeout(function(){
+			var ww = window.innerWidth;
+			if(ww <= 1300){
+				$('#Chen').addClass('active');
+				$('#Lin').addClass('active');
+			}else{
+				$('#Chen').addClass('active');
+				$('#Lin').removeClass('active');
+			}
+		}, 500);
+   })
 
+			var ww = window.innerWidth;
+			if(ww <= 1300){
+				$('#Chen').addClass('active');
+				$('#Lin').addClass('active');
+			}else{
+				$('#Chen').addClass('active');
+				$('#Lin').removeClass('active');
+			}
 
 // 	window.onresize = function() {
 // 		www.calc();

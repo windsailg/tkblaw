@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-#examList .exam_combo_links, #examList .exam_combo_links .ec_container, #examList .teacher .teacher_blocks .teacher_block .img_box, #examList .course_intro .course_information > .content_table.type_btns, #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block, #examList .advantage .imagine > .items, #examList .advantage .imagine > .items .item, #examList .q_and_a .qa_container {
+#examList .exam_combo_links, #examList .exam_combo_links .ec_container, #examList .teacher, #examList .teacher > .teacher_block, #examList .teacher > .teacher_block > .teacher_img_block, #examList .course_intro .course_information > .content_table.type_btns, #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block, #examList .advantage .imagine > .items, #examList .advantage .imagine > .items .item, #examList .q_and_a .qa_container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -199,6 +199,18 @@ html {
   #examList .zone .container.type_full > .title::after {
     left: -5px;
     width: 3px;
+  }
+}
+
+@media all and (max-width: 1301px) {
+  #examList .zone .container.teacher {
+    padding: 0px 40px;
+  }
+}
+
+@media all and (max-width: 861px) {
+  #examList .zone .container.teacher {
+    padding: 0px 10px;
   }
 }
 
@@ -781,9 +793,10 @@ html {
 }
 
 #examList .teacher {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   float: left;
   width: 100%;
   position: relative;
@@ -795,482 +808,279 @@ html {
   }
 }
 
-#examList .teacher .teacher_blocks {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-  clear: both;
-  position: relative;
-  padding: 15px 0 30px;
-  z-index: 0;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks {
-    padding: 10px 0 10px;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: inline-block;
-  float: left;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  position: relative;
-  width: 50%;
-  min-height: 390px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block {
-    width: 100%;
-    min-height: 350px;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.active .info_board {
-  opacity: 1;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  -webkit-transition-delay: .5s;
-       -o-transition-delay: .5s;
-          transition-delay: .5s;
-  -webkit-transition-duration: .6s;
-       -o-transition-duration: .6s;
-          transition-duration: .6s;
-}
-
-#examList .teacher .teacher_blocks .teacher_block.active .teacher_name_card {
-  cursor: default;
-  -webkit-filter: drop-shadow(10px 8px 0px #223546);
-  filter: drop-shadow(10px 8px 0px #223546);
-}
-
-#examList .teacher .teacher_blocks .teacher_block.active .teacher_name_card .mask_title .control {
-  opacity: 0;
-}
-
-#examList .teacher .teacher_blocks .teacher_block.active .teacher_name_card .mask_content {
-  visibility: visible;
-  opacity: 1;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .img_box {
+#examList .teacher > .teacher_block {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 0;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .img_box img {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 100%;
-  max-width: 300px;
+  position: relative;
+  width: 400px;
 }
 
-#examList .teacher .teacher_blocks .teacher_block .info_board {
+@media all and (max-width: 1301px) {
+  #examList .teacher > .teacher_block {
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 320px;
+  position: relative;
+  z-index: 5;
+  opacity: .7;
+  text-align: center;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block:hover {
+  opacity: .8;
+}
+
+@media all and (max-width: 1301px) {
+  #examList .teacher > .teacher_block > .teacher_img_block {
+    width: 46%;
+  }
+}
+
+@media all and (max-width: 861px) {
+  #examList .teacher > .teacher_block > .teacher_img_block {
+    width: 100%;
+  }
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block > .img_box {
+  width: 60%;
+  overflow: hidden;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+  -webkit-transition-delay: .4s;
+       -o-transition-delay: .4s;
+          transition-delay: .4s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+       -o-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block > .img_box > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block.shao {
+  left: 0px;
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block.chen {
+  right: 0px;
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block.active {
+  opacity: 1;
+}
+
+#examList .teacher > .teacher_block > .teacher_img_block.active .img_box {
+  width: 100%;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+@media all and (max-width: 1301px) {
+  #examList .teacher > .teacher_block > .teacher_img_block.active .img_box {
+    width: 250px;
+  }
+}
+
+#examList .teacher > .teacher_block > .teacher_intro_block {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  -webkit-transition-delay: .0s;
-       -o-transition-delay: .0s;
-          transition-delay: .0s;
-  -webkit-transition-duration: .2s;
-       -o-transition-duration: .2s;
-          transition-duration: .2s;
-  width: 350px;
-  top: -40px;
-  position: absolute;
-  opacity: 0;
-  margin: 0 auto;
-  overflow: hidden;
+  display: inline-block;
+  float: left;
+  width: 420px;
 }
 
-@media all and (max-width: 650px) {
-  #examList .teacher .teacher_blocks .teacher_block .info_board.dp-tab {
+@media all and (max-width: 1301px) {
+  #examList .teacher > .teacher_block > .teacher_intro_block {
     display: none;
   }
 }
 
-#examList .teacher .teacher_blocks .teacher_block .info_board.dp-mob {
-  display: none;
+#examList .teacher > .teacher_block.head {
   width: 100%;
 }
 
-@media all and (max-width: 650px) {
-  #examList .teacher .teacher_blocks .teacher_block .info_board.dp-mob {
+#examList .teacher > .teacher_block.body {
+  width: 100%;
+}
+
+#examList .teacher > .teacher_block .intro_content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 400px;
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  opacity: 0;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+@media all and (max-width: 1301px) {
+  #examList .teacher > .teacher_block .intro_content {
+    display: none;
+  }
+}
+
+#examList .teacher > .teacher_block .intro_content.active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -webkit-transition-delay: .3s;
+       -o-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+#examList .teacher > .teacher_block .intro_content.dp_mob {
+  display: none;
+}
+
+@media all and (max-width: 1301px) {
+  #examList .teacher > .teacher_block .intro_content.dp_mob {
     display: block;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block .info_board.chen {
-  right: -115px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block .info_board.chen {
-    right: unset;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block .info_board.lin {
-  left: -95px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block .info_board.lin {
-    left: unset;
-  }
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block .info_board {
-    display: inline-block;
     position: relative;
     top: unset;
-    right: unset;
-    left: unset;
-    width: calc(100% - 300px);
-    padding-top: 10px;
   }
 }
 
-#examList .teacher .teacher_blocks .teacher_block .info_board > .title {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  letter-spacing: 0px;
-  font-size: 17px;
-  margin: 12px 0 0px;
-  width: 100%;
-  color: #424242;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .info_board > .board_box {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0 0 0 20px;
-  color: #424242;
-  float: left;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .info_board > .board_box > .board_item {
-  margin: 0;
-  padding: 0;
-  font-size: 17px;
-  line-height: 21px;
-  width: 100%;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  position: absolute;
-  background: #252525;
-  z-index: 1;
-  top: 260px;
-  width: 350px;
-  height: 135px;
-  padding: 20px 50px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card:hover .mask_title .control {
-  background-color: #43BEAD;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block .teacher_name_card {
-    top: auto;
-    bottom: 3px;
-  }
-}
-
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block .teacher_name_card {
-    padding: 18px 12px;
-    width: 300px;
-    height: unset;
-    overflow: hidden;
-    position: relative;
-    top: -10px;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_title {
+#examList .teacher > .teacher_block .intro_content > .title {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: inline-block;
   float: left;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  width: 300px;
-  float: left;
-  color: #fff;
-  position: relative;
-}
-
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_title {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_title .name {
-  font-size: 21px;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_title .subname {
-  margin: 9px 0 0;
-  font-size: 18px;
-  font-weight: 300;
-  color: #6a8196;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_title .remarks {
-  margin: 4px 0 0;
-  font-size: 18px;
-  font-weight: 300;
-  color: #ececec;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_title .control {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  float: left;
-  position: absolute;
-  right: -20px;
-  bottom: -3px;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 100%;
+  font-size: 26px;
+  letter-spacing: 2px;
   text-align: center;
-  padding: 6px;
+  color: #000;
 }
 
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_content {
+#examList .teacher > .teacher_block .intro_content > .subtitle {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: inline-block;
   float: left;
-  -webkit-transition: .3s all ease-in-out;
-  -o-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
-  padding: 0px 0px 0 30px;
-  width: 50%;
-  position: absolute;
-  color: #969696;
-  font-size: 16px;
-  visibility: hidden;
-  opacity: 0;
+  width: 100%;
+  color: #666;
+  font-size: 20px;
+  text-align: center;
 }
 
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_content {
-    position: relative;
-    width: 100%;
-    float: left;
-    margin: 15px auto;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_content > .title {
+#examList .teacher > .teacher_block .intro_content > .content_bg {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
-  width: 100%;
+  display: inline-block;
   float: left;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+  position: relative;
+}
+
+#examList .teacher > .teacher_block .intro_content > .content_bg::before, #examList .teacher > .teacher_block .intro_content > .content_bg::after {
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  top: 0;
+  margin-top: auto;
+  bottom: 0;
+  margin-bottom: auto;
+  position: absolute;
+  z-index: 0;
+  width: 50px;
+  height: 95%;
+  border: 1px solid #666;
+}
+
+#examList .teacher > .teacher_block .intro_content > .content_bg::before {
+  left: -5px;
+}
+
+#examList .teacher > .teacher_block .intro_content > .content_bg::after {
+  right: -5px;
+}
+
+#examList .teacher > .teacher_block .intro_content .content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 100%;
+  background-color: #fff;
+  padding: 14px;
+  outline-color: #0cdab2;
+  position: relative;
+  z-index: 10;
+}
+
+#examList .teacher > .teacher_block .intro_content .content > .paragraph {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 100%;
+}
+
+#examList .teacher > .teacher_block .intro_content .content > .paragraph > .title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  float: left;
   letter-spacing: 0px;
+  font-size: 17px;
+  padding: 2px 0 0 0;
+  color: #000;
 }
 
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_content .content {
+#examList .teacher > .teacher_block .intro_content .content > .paragraph > .content {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
-  width: 100%;
-  color: #969696;
+  display: inline-block;
   float: left;
-  margin: 0;
-  padding: 0 0  0 0px;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_content .content .item {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  width: 100%;
-  height: 20px;
-  position: relative;
-  padding: 0 0 0 10px;
-}
-
-#examList .teacher .teacher_blocks .teacher_block .teacher_name_card .mask_content .content .item::before {
-  content: '•';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  left: -2px;
-  top: -12px;
-  font-size: 30px;
-}
-
-#examList .teacher .teacher_blocks .teacher_block.chen .img_box {
-  width: 225px;
-  height: 310px;
-  position: relative;
-  float: left;
-  left: 55px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block.chen .img_box {
-    height: auto;
-    margin: 0 0 0 50px;
-    left: unset;
-  }
-}
-
-@media all and (max-width: 650px) {
-  #examList .teacher .teacher_blocks .teacher_block.chen .img_box {
-    margin: 0 auto;
-    float: unset;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.chen .teacher_name_card {
-  left: 0;
-  width: 410px;
-}
-
-#examList .teacher .teacher_blocks .teacher_block.chen .teacher_name_card .mask_title {
-  float: left;
-}
-
-#examList .teacher .teacher_blocks .teacher_block.chen .teacher_name_card .mask_content {
-  float: left;
-}
-
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block.chen .teacher_name_card .mask_content {
-    padding: 10px;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.chen.active .teacher_name_card {
-  width: 705px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block.chen.active .teacher_name_card {
-    width: 100%;
-  }
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin {
-    margin: 30px auto;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.lin .img_box {
-  width: 225px;
-  height: 310px;
-  position: relative;
-  float: right;
-  right: 60px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin .img_box {
-    float: left;
-    right: unset;
-    margin: 0 0 0 50px;
-    height: auto;
-  }
-}
-
-@media all and (max-width: 650px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin .img_box {
-    margin: 0 auto;
-    float: unset;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card {
-  right: 10px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card {
-    right: unset;
-  }
-}
-
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card {
-    right: 0px;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card .mask_title {
-  width: 250px;
-  float: left;
-}
-
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card .mask_title {
-    width: 100%;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card .mask_content {
-  float: left;
-  padding: 0;
-}
-
-@media all and (max-width: 861px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin .teacher_name_card .mask_content {
-    padding: 10px;
-  }
-}
-
-#examList .teacher .teacher_blocks .teacher_block.lin.active .teacher_name_card {
-  width: 645px;
-}
-
-@media all and (max-width: 1301px) {
-  #examList .teacher .teacher_blocks .teacher_block.lin.active .teacher_name_card {
-    width: 100%;
-  }
+  letter-spacing: 0px;
+  font-size: 16px;
+  padding: 0 0  3px 0;
+  line-height: 20px;
 }
 
 #examList .course_intro {

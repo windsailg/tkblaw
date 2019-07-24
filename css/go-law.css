@@ -214,7 +214,7 @@ html {
   }
 }
 
-#examList .bank_title {
+#examList .law_title {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
@@ -225,31 +225,31 @@ html {
 }
 
 @media all and (max-width: 861px) {
-  #examList .bank_title {
+  #examList .law_title {
     width: calc(100% - 100px);
   }
 }
 
 @media all and (max-width: 580px) {
-  #examList .bank_title {
+  #examList .law_title {
     width: 100%;
   }
 }
 
-#examList .bank_title .top_title {
+#examList .law_title .top_title {
   font-size: 48px;
   color: #444;
   margin: 46px 0 5px;
 }
 
 @media all and (max-width: 861px) {
-  #examList .bank_title .top_title {
+  #examList .law_title .top_title {
     margin-top: 32px;
     font-size: 34px;
   }
 }
 
-#examList .bank_title .top_subtitle {
+#examList .law_title .top_subtitle {
   display: block;
   font-weight: 300;
   font-size: 17px;
@@ -257,7 +257,7 @@ html {
   margin: 5px 0;
 }
 
-#examList .bank_title .top_subtitle.type2 {
+#examList .law_title .top_subtitle.type2 {
   width: 500px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -266,19 +266,19 @@ html {
   font-size: 21px;
 }
 
-#examList .bank_title .top_subtitle.type2 br {
+#examList .law_title .top_subtitle.type2 br {
   display: none;
 }
 
 @media all and (max-width: 861px) {
-  #examList .bank_title .top_subtitle.type2 {
+  #examList .law_title .top_subtitle.type2 {
     width: 100%;
     font-size: 18px;
   }
-  #examList .bank_title .top_subtitle.type2 span {
+  #examList .law_title .top_subtitle.type2 span {
     display: none;
   }
-  #examList .bank_title .top_subtitle.type2 br {
+  #examList .law_title .top_subtitle.type2 br {
     display: block;
   }
 }
@@ -3148,6 +3148,11 @@ html {
   border: 1px solid #ccc;
 }
 
+.table_block table tr th.no-sticky {
+  position: relative;
+  z-index: 0;
+}
+
 .table_block table tr td {
   padding: 13px;
   text-align: center;
@@ -3159,11 +3164,20 @@ html {
   background: #fff;
 }
 
+.table_block table tr td.no-sticky {
+  position: relative;
+  z-index: 0;
+}
+
 .table_block table tr td ul {
   list-style: decimal;
   text-align: left;
   padding: 0 0 0 40px;
   margin: 0;
+}
+
+.table_block table.t0 {
+  width: 100%;
 }
 
 .table_block table.t3 {

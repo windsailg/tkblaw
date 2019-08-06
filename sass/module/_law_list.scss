@@ -27,7 +27,7 @@ $color_trigger_X_item:#fff;
 $color_trigger_X_element:#fff;
 $color_trigger_X_tip:#fff;
 
-$color_trigger_Y_title:#666;
+$color_trigger_Y_title:#444;
 $color_trigger_Y_subtitle:#444;
 $color_trigger_Y_content:#444;
 $color_trigger_Y_name:#444;
@@ -73,9 +73,9 @@ $media-861:861px;
 }
 
 @include M861(){
-   .title{
-      text-align: left!important;
-   }
+   // .title{
+   //    text-align: left!important;
+   // }
 }
 
 html{
@@ -204,11 +204,18 @@ html{
                   }
                }
             }
-
+            &.teacher{
+               @include M1301(){
+                  padding: 0px 40px;
+               }
+               @include M861(){
+                  padding: 0px 10px;
+               }
+            }
          }
       }
       
-      .bank_title{
+      .law_title{
          @include block;
          float: left;
          width: 100%;
@@ -609,7 +616,7 @@ html{
       }
 
       .teacher{
-         @include block;
+         @include fxc;
          float: left;
          width: 100%;
          
@@ -617,360 +624,170 @@ html{
          @include M1301(){
             padding: 0 0px;
          }
-
-         .teacher_blocks{
-            @include ib;
+         > .teacher_block{
+            @include fxc;;
+            align-items: flex-end;
             width: 100%;
-            clear: both;
             position: relative;
-            padding: 15px 0 30px;
-            z-index: 0;
             @include M1301(){
-               padding: 10px 0 10px;
+               justify-content: space-evenly;
+               align-items: flex-start;
             }
-            .teacher_block{
-               @include inline-block;
-               @include transition;
+            > .teacher_img_block{
+               @include fxc;
+               width: 320px;
                position: relative;
-               width: 50%;
-               min-height: 390px;
+               z-index: 5;
+               opacity: .7;
+               text-align: center;
+               @include tst;
+               @include hover;
                @include M1301(){
-                  width: 100%;
-                  min-height: 350px;
+                 width: 46%;
                }
-               &.active{//公用active
-                  .info_board{
-                     opacity: 1;
-                     @include transition;
-                     transition-delay: .5s;
-                     transition-duration: .6s;
-                     
-                  }
-                  .teacher_name_card{
-                        cursor: default;
-                        -webkit-filter: drop-shadow(10px 8px 0px $color_5s);
-                        filter: drop-shadow(10px 8px 0px $color_5s);
-                        .mask_title{
-                           .control{
-                              opacity: 0;
-                              
-                           }
-                        }
-                        .mask_content{
-                           visibility: visible;
-                           opacity: 1;
-                        }
+               @include M861(){
+                  width: 100%;
+               }
+               > .img_box{
+                  width: 60%;
+                  overflow: hidden;
+                  @include tst;
+                  transition: all .4s;
+                  transition-delay: .4s;
+                  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+                  > img{
+                     max-width: 100%;
+                     max-height: 100%;
                   }
                }
                
-               .img_box{
-                  @include fxc;
-                  align-items: center;
-                  top: 0;
-                  img{
-                     width: 100%;
-                     // min-height: 100%;
-                     max-width: 300px;
-                  }
-               }
-
-               .info_board{
-                  @include block;
-                  @include transition;
-                  transition-delay: .0s;
-                  transition-duration: .2s;
-                  width: 350px;
-                  top:-40px;
-                  position: absolute;
-                  opacity: 0;
-                  margin:  0 auto;
-                  overflow:  hidden;
-                  &.dp-tab{
-                     @include MCW(650px){
-                        display:none;
-                     }
-                  }
-                  &.dp-mob{
-                     display:none;
-                     width: 100%;
-                     @include MCW(650px){
-                        display:block;
-                        
-                     }
-                  }
-                  &.chen{
-                     right: -115px;
-                     @include M1301(){
-                        right: unset;
-                     }
-                  }
-                  &.lin{
-                     left: -95px;
-                     @include M1301(){
-                        left: unset;
-                     }
-                  }
-                  @include M1301(){
-                     display: inline-block;
-                     position: relative;
-                     top:unset;
-                     right: unset;
-                     left: unset;
-                     width: calc(100% - 300px);
-                     padding-top:10px; 
-                  }
-                  > .title{
-                     @include block;
-                     letter-spacing: 0px;
-                     font-size: 17px;
-                     margin: 12px 0 0px;
-                     width: 100%;
-                     color:rgb(66, 66, 66);
-                  }
-                  > .board_box{
-                     @include block;
-                     width: 100%;
-                     margin: 0;
-                     padding:  0 0 0 20px;
-                     color:rgb(66, 66, 66);
-                     float: left;
-                     > .board_item{
-                        margin: 0;
-                        padding:  0 ;
-                        font-size: 17px;
-                        line-height: 21px;
-                        width: 100%;
-                     }
-                  }
-               }
-
-               .teacher_name_card{
-                  @include block;
-                  @include transition;
-                  position: absolute;
-                  background:rgba(37, 37, 37, 0.9);
-                  z-index: 1;
-                  top: 260px;
-                  width: 350px;
-                  height: 135px;
-                  padding: 20px 50px;
-                  overflow:hidden;
-                  cursor: pointer;
-                  &:hover{
-                     .mask_title{
-                        .control{
-                           background-color: $color_14;
-                        }
-                     }
-                  }
-                  @include M1301(){
-                     top: auto;
-                     bottom: 3px;
-                  }
-                  @include M861(){
-                     padding: 18px 12px;
-                     width: 300px;
-                     height: unset;
-                     overflow:hidden;
-                     position: relative;
-                     top: -10px;
-                  }
-                  .mask_title{
-                     @include inline-block;
-                     @include transition;
-                     width: 300px;
-                     float: left;
-                     color:#fff;
-                     position: relative;
-                     @include M861(){
-                        width: 100%;
-                        text-align: center;
-                     }
-                     .name{
-                        font-size: 21px;
-                     }
-                     .subname{
-                        margin: 9px 0 0;
-                        font-size: 18px;
-                        font-weight: 300;
-                        color:$color_4s;
-                     }
-                     .remarks{
-                        margin: 4px 0 0;
-                        font-size: 18px;
-                        font-weight: 300;
-                        color:rgb(236, 236, 236);
-                     }
-                     .control{
-                        @include block-float;
-                        position: absolute;
-                        right: -20px;
-                        bottom: -3px;
-                        @include transition;
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        text-align: center;
-                        padding: 6px ;
-                     }
-                  }
-                  .mask_content{
-                     @include inline-block;
-                     @include transition;
-                     padding:0px 0px 0 30px;;
-                     width: 50%;
-                     position: absolute;
-                     color:rgb(150, 150, 150);
-                     font-size:16px;
-                     
-                     visibility: hidden;
-                     opacity: 0;
-                     @include M861(){
-                        position: relative;
-                        width: 100%;
-                        float: left;
-                        margin: 15px auto;
-                     }
-                     
-                     > .title{
-                        @include block;
-                        width: 100%;
-                        float: left;
-                        font-size:16px;
-                        margin: 0;
-                        padding: 0;
-                        letter-spacing: 0px;
-                     }
-                     .content{
-                        @include block;
-                        width: 100%;
-                        color:rgb(150, 150, 150);
-                        float: left;
-                        margin: 0;
-                        padding:  0 0  0 0px;
-                        .item{
-                           @include block;
-                           width: 100%;
-                           height: 20px;
-                           position:relative;
-                           padding: 0 0 0 10px;
-                           &::before{
-                              content:'•';
-                              position: absolute;
-                              width: 10px;
-                              height: 10px;
-                              left: -2px;
-                              top:-12px;
-                              font-size:30px;
-                              
-                           }
-                        }
-
-                     }
-                  }
-
+               &.shao{
+                  left: 0px;
                }
                &.chen{
-                  .img_box{
-                     width: 225px;
-                     height: 310px;
-                     position: relative;
-                     float: left;
-                     left: 55px;
-                     @include M1301(){
-                        height: auto;
-                        margin:  0 0 0 50px;
-                        left:unset;
-                     }
-                     @include MCW(650px){
-                        margin:  0 auto;
-                        float:  unset;
-                     }
-                  }
-                  .teacher_name_card{
-                     left:0;
-                     width: 410px;
-                     .mask_title{
-                        float: left;
-
-                     }
-                     .mask_content{
-                        float: left;
-                        @include M861(){
-                           padding: 10px;
-                        }
-                     }
-                  }
-                  &.active{
-                     .teacher_name_card{
-                           width: 705px;
-                           @include M1301(){
-                              width: 100%;
-                           }
-                     }
-                  }
+                  right: 0px;
                }
-               &.lin{
-                  @include M1301(){
-                     margin: 30px auto;
-                  }
+               &.active{
+                  opacity: 1;
+                  
                   .img_box{
-                     width: 225px;
-                     height: 310px;
-                     position: relative;
-                     float: right;
-                     right: 60px;
+                     width: 100%;;
+                     transition-delay: 0s;
                      @include M1301(){
-                        float: left;
-                        right: unset;
-                        margin:  0 0 0 50px;
-                        height: auto;
-                     }
-                     @include MCW(650px){
-                        margin:  0 auto;
-                        float:  unset;
-                     }
-                  }
-                  .teacher_name_card{
-                     right:10px;
-                     @include M1301(){
-                        right: unset;
-                     }
-                     @include M861(){
-                        right:0px;
-                     }
-                     .mask_title{
                         width: 250px;
-                        float: left;
-                        @include M861(){
-                           width: 100%;
-                        }
-                     }
-                     .mask_content{
-                        float: left;
-                        padding: 0;
-                        @include M861(){
-                           padding: 10px;
-                        }
-                     }
-
-                  }
-                  &.active{
-                     .teacher_name_card{
-                           width: 645px;
-                           @include M1301(){
-                              width: 100%;
-                           }
-                           
                      }
                   }
                }
-
             }
-         }
-         .eacher_img{
+            > .teacher_intro_block{
+               @include ibl;
+               width: 420px;
+               @include M1301(){
+                 display: none;
+               }
+            }
+            &.head{
+               width: 100%;
+            }
+            &.body{
+               width: 100%;
+            }
+            width:400px;
+
+            .intro_content{
+               @include ibl;
+               width: 400px;
+               position: absolute;
+               visibility: hidden;
+               @include aa;
+               opacity:0;
+               @include tst;
+               @include M1301(){
+                  display: none;
+               }
+               &.active{
+                  visibility: visible;
+                  opacity:1;
+                  @include tst;
+                  transition-delay: .3s;
+               }
+               &.dp_mob{
+                  display: none;
+                  @include M1301(){
+                     display: block;
+                     position: relative;
+                     top: unset;
+                  }
+               }   
+               > .title{
+                  @include ibl;
+                  width: 100%;
+                  font-size: 26px;
+                  letter-spacing: 2px;
+                  text-align: center;
+                  color: #000;
+               }
+               > .subtitle{
+                  @include ibl;
+                  width: 100%;
+                  color: #666;
+                  font-size: 20px;
+                  text-align: center;
+               }
+               > .content_bg{
+                  @include ibl;
+                  position: relative;
+                  &::before,
+                  &::after{
+                     content:'';
+                     @include ib;
+                     @include atb;
+                     position: absolute;
+                     z-index: 0;
+                     width: 50px;
+                     height:95%;
+                     border:1px solid #666;
+                  }
+                  &::before{
+                     left: -5px;
+                  }
+                  &::after{
+                     right: -5px;
+                  }
+               }
+               .content{
+                  @include ibl;
+                  width: 100%;
+                  background-color: #fff;
+                  padding: 14px ;
+                  outline-color: #0cdab2;
+                  position: relative;
+                  z-index: 10;
+                  > .paragraph{
+                     @include ibl;
+                     width: 100%;
+                     > .title{
+                        @include ibl;
+                        letter-spacing: 0px;
+                        font-size: 17px;
+                        padding: 2px 0 0 0;
+                        color: #000;
+                     }
+                     > .content{
+                        @include ibl;
+                        letter-spacing: 0px;
+                        font-size: 16px;
+                        padding:0 0  3px 0;
+                        line-height: 20px;
+
+                     }
+
+                  }
+               }
+            }
 
          }
+
 
       }
 
@@ -1220,8 +1037,10 @@ html{
                      }
                      .course_image{
                         width: 100%;
+                        min-height: 155px;
+                        @include fxc;
                         img{
-                           width: 100%;
+                           max-width: 100%;
                         }
                      }
                      .title{
@@ -1236,14 +1055,14 @@ html{
                         height: 60px;
                      }
                      .more_block{
-                        @include ib;
+                        @include fxb;
+
                         width: 100%;
                         @include transition;
                         float: left;
                         margin:10px 0 10px ;
-                        padding:  0 10px;
+                        padding:  0 15px;
                         font-size: 16px;
-                        
                         line-height: 22px;
                         overflow: hidden;
                         max-height: 65px;
@@ -1253,11 +1072,10 @@ html{
                         //padding: 0  0px 0 10px;
                         .price{
                            @include inline-block;
-                           color: #f66;
+                           color: #d0475f;
                         }
                         .see_more{
                            @include ib;
-                           width: 100%;
                            padding: 0 0 0 10px;
                            text-align: right;
                            color: #3E4454;
@@ -1382,6 +1200,15 @@ html{
                list-style: none;
                padding: 5px 0px 0;
                margin: 0;
+               width: 100%;
+               > a{
+                  @include MCW(1300px){
+                     width: 33%;
+                  }
+                  @include MCW(861px){
+                     width: 100%;
+                  }
+               }
                 .item{
                   @include fxc;
                   align-items: flex-start;
@@ -1416,10 +1243,10 @@ html{
                      color: #fff;
                      @include ds(1px,1px , 5px,#333)
                      @include M1301(){
-                        width: 70px;
+                        width: 80px;
                      }
                      @include M861(){
-                        width: 60px;
+                        width: 80px;
                      }
                      img{
                         border-radius: 50%;
@@ -1431,6 +1258,11 @@ html{
                      width: 70%;
                      color:$color_12;
                      padding: 0 0 0 15px;
+                     @include MCW(1300px){
+                        width: 100%;
+                        padding: 0 0 0 0px;
+                     }
+
                      > .title{
                         @include block-float();
                         width: 100%;
@@ -1438,17 +1270,27 @@ html{
                         font-size: 28px;
                         color:rgb(255, 255, 255);
                         letter-spacing: 4px;
+                        @include MCW(1300px){
+                           text-align: center;
+                        }
                         @include MCW(580px) {
-                           text-align: left;
+                           
                         }
                      }
                      > .intro{
+
                         @include block-float();
                         width: 100%;
                         font-size: 20px;
                         color:rgb(236, 236, 236);
                         margin: 10px auto 0;
                         opacity: .9;
+                        @include MCW(1300px){
+                           text-align: center;
+                        }
+                        // @include M861(){
+                        //    text-align: left;
+                        // }
                      }
                   }
                }
@@ -1487,6 +1329,7 @@ html{
                         color:rgb(39, 39, 39);
                         @include MCW(580px){
                            text-align: left;
+                           letter-spacing: 2px;
                         }
                      }
                      > .subtitle{
@@ -2069,29 +1912,36 @@ html{
                }
                .intro{
                   @include block-float;
-                  padding: 30px 100px 65px;
+                  padding: 30px 100px 35px;
                   background-color:rgb(31, 31, 31); 
+                  text-align: center;
                   //margin: 30px 100px 65px;;
                   @include MCW(581px){
                      width: 100%;
-                     padding: 20px 18px 50px;
+                     padding: 20px 18px 20px;
                   }
                   .title{
                      @include ibl;
                      width: 100%;
                      color: $color_trigger_X_title;
                      letter-spacing: 2px;
-                     font-size: 20px;
+                     font-size: 24px;
                   }
                   .content{
                      @include block-float;
                      color: rgb(226, 226, 226);
                      margin: 12px auto;
-                     font-size: 17px;
+                     font-size: 18px;
                      height: 87px;
                      overflow: hidden;
+                     width: 100%;
+                     font-weight: bold;
                      a{
-                        color:$color_13
+                        color:$color_13;
+                        @include hover;
+                     }
+                     i{
+                        padding: 0 5px;
                      }
                   }
                }
@@ -2380,13 +2230,22 @@ html{
          .table_tip{
             color: #050505;
          }
+         thead{
+            tr{
+               border: 2px solid #ccc;
+            }
+         }
          tr{
             
             th{
                font-weight: 300;
                background-color: #DDDDDD;
                &:first-child{
-                  outline:1px solid #ddd;
+                  border:1px solid #ccc;
+               }
+               &.no-sticky{
+                  position: relative;
+                  z-index:0;
                }
             }
             td{
@@ -2396,7 +2255,10 @@ html{
                line-height: 26px;
                &:first-child{
                   background: #fff;
-                  outline:1px solid #ddd;
+               }
+               &.no-sticky{
+                  position: relative;
+                  z-index:0;
                }
                ul{
                   list-style: decimal;
@@ -2406,6 +2268,9 @@ html{
                }
                
             }
+         }
+         &.t0{
+            width: 100%;
          }
          &.t3{
             position: relative;
@@ -2497,6 +2362,40 @@ html{
                td{
                   
                   padding: 20px 0;
+               }
+            }
+         }
+         &.t6{
+            position: relative;
+            float: left;
+            margin: 40px auto 0;
+            @include M861(){
+               margin: 20px auto 0;
+            }
+            tr{
+               th{
+                  @include nowrap;
+                  padding: 8px 4px;
+                  
+               }
+               td{
+                  
+                  padding: 20px 0;
+               }
+            }
+            &.type2{
+               width: 100%;
+               th{
+                  white-space: normal;
+                  > span{
+                     font-size: 24px;
+                  }
+               }
+               td{
+                  width: 50%;
+                  // @include M861(){
+                  //    width: 100%;
+                  // }
                }
             }
          }

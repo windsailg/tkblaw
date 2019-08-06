@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-#examList .exam_combo_links, #examList .exam_combo_links .ec_container, #examList .teacher, #examList .teacher > .teacher_block, #examList .teacher > .teacher_block > .teacher_img_block, #examList .course_intro .course_information > .content_table.type_btns, #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block, #examList .advantage .imagine > .items, #examList .advantage .imagine > .items .item, #examList .q_and_a .qa_container {
+#examList .exam_combo_links, #examList .exam_combo_links .ec_container, #examList .teacher, #examList .teacher > .teacher_block, #examList .teacher > .teacher_block > .teacher_img_block, #examList .course_intro .course_information > .content_table.type_btns, #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .course_image, #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .more_block, #examList .advantage .imagine > .items, #examList .advantage .imagine > .items .item, #examList .q_and_a .qa_container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1463,10 +1463,15 @@ html {
 
 #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .course_image {
   width: 100%;
+  min-height: 155px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .course_image img {
-  width: 100%;
+  max-width: 100%;
 }
 
 #examList .course_intro .course_information .course_swiper_block .course_swiper .swiper-slide .title {
